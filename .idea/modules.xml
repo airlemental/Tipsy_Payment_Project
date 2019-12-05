@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/tipsy.discovery/tipsy.discovery.iml" filepath="$PROJECT_DIR$/tipsy.discovery/tipsy.discovery.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tipsy.experience/tipsy.experience.iml" filepath="$PROJECT_DIR$/tipsy.experience/tipsy.experience.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tipsy.gateway/tipsy.gateway.iml" filepath="$PROJECT_DIR$/tipsy.gateway/tipsy.gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tipsy.security/tipsy.security.iml" filepath="$PROJECT_DIR$/tipsy.security/tipsy.security.iml" />
+    </modules>
+  </component>
+</project>

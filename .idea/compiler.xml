@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="tipsy.gateway" />
+        <module name="tipsy.discovery" />
+        <module name="tipsy.experience" />
+        <module name="tipsy.security" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="tipsy.discovery" target="11" />
+      <module name="tipsy.experience" target="11" />
+      <module name="tipsy.gateway" target="11" />
+      <module name="tipsy.security" target="11" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="tipsy.discovery" options="-parameters" />
+      <module name="tipsy.experience" options="-parameters" />
+      <module name="tipsy.gateway" options="-parameters" />
+      <module name="tipsy.security" options="-parameters" />
+    </option>
+  </component>
+</project>

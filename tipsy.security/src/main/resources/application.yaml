@@ -1,0 +1,15 @@
+server:
+  port: 0
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url: http://discUser:discPassword@localhost:8082/eureka/
+  instance:
+    instance-id: ${spring.application.name}:${random.int}
+spring:
+  security:
+    user:
+      name: configUser
+      password: configPassword
+      roles: SYSTEM
