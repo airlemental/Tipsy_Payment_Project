@@ -23,12 +23,14 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.sessionManagement()
+        http
+                .sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.ALWAYS)
                 .and().requestMatchers().antMatchers("/eureka/**")
                 .and().authorizeRequests().antMatchers("/eureka/**")
                 .hasRole("SYSTEM").anyRequest().denyAll().and()
-                .httpBasic().and().csrf().disable();
+                .httpBasic().and().csrf().disable();  //Have CSRF disabled here but might want it active, just not for eureka clients
+                                                      // use if needed: http.csrf().ignoringAntMatchers("/eureka/**");  super.configure(http);
     }
 
 
@@ -37,7 +39,8 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 
         @Override
         protected void configure(HttpSecurity http) throws Exception {
-            http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.NEVER)
+            http
+                    .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.NEVER)
                     .and().httpBasic().disable().authorizeRequests()
                     .antMatchers(HttpMethod.GET, "/").hasRole("ADMIN")
                     .antMatchers("/info", "/health").authenticated().anyRequest()

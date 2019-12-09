@@ -1,3 +1,14 @@
+---
 spring:
   application:
     name: TipsySecurityServer
+  datasource:
+    url: jdbc:mysql://localhost:3306/tipsy
+    username: Wind
+    password: B031ng777
+  profiles: development
+  security:
+    user:
+      name: configUser
+      password: configPassword
+      roles: SYSTEM
