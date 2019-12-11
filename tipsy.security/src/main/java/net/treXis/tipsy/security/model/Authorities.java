@@ -2,16 +2,16 @@ package net.treXis.tipsy.security.model;
 
 public class Authorities {
 
-    private int user_account;
+    private Long user_account;
     private String username;
     private String authority;
 
 
-    public int getUser_account() {
+    public Long getUser_account() {
         return user_account;
     }
 
-    public void setUser_account(int user_account) {
+    public void setUser_account(Long user_account) {
         this.user_account = user_account;
     }
 

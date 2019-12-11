@@ -8,18 +8,17 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import javax.persistence.Table;
 import java.sql.Timestamp;
 import java.util.Set;
 
-@Entity(name = "tipsy")
-@Table(name = "users")
+@Entity(name = "users")
+//@Table(name = "users")
 @JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
-public class Users {
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int user_account;
+    private Long user_account;
 
     private String username;
     private String bcrypt_key;
@@ -32,11 +31,10 @@ public class Users {
 
     //    @JoinColumn(name = "from_user_account")
     //    @JoinTable(name = "fund_request_queue")
-    @OneToMany(mappedBy = "users", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<FundRequests> fundRequests;
 
-    public Users(){
-
+    public User(){
     }
 
     // begin constructors, getters, and setters
@@ -53,11 +51,11 @@ public class Users {
     }
 
 // For Users
-    public int getUser_account() {
+    public Long getUser_account() {
         return user_account;
     }
 
-    public void setUser_account(int user_account) {
+    public void setUser_account(Long user_account) {
         this.user_account = user_account;
     }
 

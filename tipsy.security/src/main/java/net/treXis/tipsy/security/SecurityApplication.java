@@ -1,8 +1,5 @@
 package net.treXis.tipsy.security;
 
-import net.treXis.tipsy.security.repository.FundRequestsJpaRepository;
-import net.treXis.tipsy.security.repository.UserJpaRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
@@ -13,12 +10,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @EnableEurekaClient
 public class SecurityApplication extends SpringBootServletInitializer {
 
-	@Autowired
-	UserJpaRepository userJpaRepository;
-
-	@Autowired
-	FundRequestsJpaRepository fundRequestsJpaRepository;
-
+//	@Autowired
+//	UserRepository userRepository;
+//	@Autowired
+//	FundRequestsRepository fundRequestsRepository;
 
 	@RequestMapping("/test")
 	public String home() {

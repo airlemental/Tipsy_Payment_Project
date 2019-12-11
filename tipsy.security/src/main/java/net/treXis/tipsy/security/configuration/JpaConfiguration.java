@@ -19,8 +19,11 @@ import javax.sql.DataSource;
 @EnableTransactionManagement
 public class JpaConfiguration {
 
-    @Autowired
-    private DataSource dataSource;
+    private final DataSource dataSource;
+    @Autowired  //constructor injection
+    public JpaConfiguration(DataSource dataSource){
+        this.dataSource = dataSource;
+    }
 
     @Bean   // set the entity manager
     public LocalContainerEntityManagerFactoryBean entityManagerFactory(){
@@ -36,7 +39,6 @@ public class JpaConfiguration {
 
     @Bean    // set the transaction manager
     public PlatformTransactionManager transactionManager (EntityManagerFactory entityManagerFactory) {
-
         JpaTransactionManager txManager = new JpaTransactionManager();
         txManager.setEntityManagerFactory(entityManagerFactory);
         return txManager;
@@ -46,7 +48,6 @@ public class JpaConfiguration {
     public PersistenceExceptionTranslationPostProcessor exceptionTranslation(){
         return new PersistenceExceptionTranslationPostProcessor();
     }
-
 
 
 }

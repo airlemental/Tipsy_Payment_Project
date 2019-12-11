@@ -5,20 +5,17 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
 import javax.persistence.ManyToOne;
-import javax.persistence.Table;
 import java.math.BigDecimal;
 import java.sql.Timestamp;
 
-@Entity(name = "tipsy")
-@Table(name = "fund_request_queue")
+@Entity(name = "fund_request_queue")
+//@Table(name = "fund_request_queue")
 @JsonIgnoreProperties
 public class FundRequests {
 
     @Id                              //    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int from_user_acct;
+    private Long from_user_acct;
 
     private String request_code;
     private Timestamp request_date;
@@ -33,11 +30,11 @@ public class FundRequests {
     private boolean enabled;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinTable(name = "Users", joinColumns = @JoinColumn(name = "from_user_acct"), inverseJoinColumns = @JoinColumn(name = "user_account"))
-    private Users users;
+//    @JoinTable(name = "Users", joinColumns = @JoinColumn(name = "fund_request_queue.from_user_acct"), inverseJoinColumns = @JoinColumn(name = "user_account"))
+    private User user;
 
-    public Users getUsers(){
-        return users;
+    public User getUser(){
+        return user;
     }
 
 
@@ -47,11 +44,11 @@ public class FundRequests {
     public FundRequests() {
     }
 
-    public int getFrom_user_acct() {
+    public Long getFrom_user_acct() {
         return from_user_acct;
     }
 
-    public void setFrom_user_acct(int from_user_acct) {
+    public void setFrom_user_acct(Long from_user_acct) {
         this.from_user_acct = from_user_acct;
     }
 

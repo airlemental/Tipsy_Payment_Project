@@ -1,33 +1,38 @@
 package net.treXis.tipsy.security.configuration;
 
-import net.treXis.tipsy.security.model.Users;
-import net.treXis.tipsy.security.repository.UserJpaRepository;
+import net.treXis.tipsy.security.model.User;
 import net.treXis.tipsy.security.repository.UserRepository;
 import org.junit.jupiter.api.Test;
-import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.TestPropertySource;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-@ContextConfiguration(classes = {UserRepository.class, UserJpaRepository.class})
-@RunWith(SpringJUnit4ClassRunner.class)
+//@ContextConfiguration(classes = {UserRepository.class, User.class, JpaConfiguration.class, UsersController.class})
+//@RunWith(SpringRunner.class)
+
 @EnableJpaRepositories
 @EnableTransactionManagement
+@SpringBootTest(classes = UserRepository.class)
+@TestPropertySource()
+//@DataJpaTest  // tries to force the usage of in memory database, not good for integration testing
+//@AutoConfigureTestDatabase(replace= AutoConfigureTestDatabase.Replace.NONE) //trying to force @DataJpaTest to use MySQL datasource
 public class UserPersistenceTests {
 
-//	@Autowired
-//	private UserRepository userRepository;
+	@Autowired
+	JpaConfiguration jpaConfiguration;
 
 	@Autowired
-	private UserJpaRepository userJpaRepository;
+	private UserRepository userRepository;
 
 	@PersistenceContext
 	private EntityManager entityManager;
@@ -35,15 +40,20 @@ public class UserPersistenceTests {
 	java.sql.Timestamp date = new java.sql.Timestamp(new java.util.Date().getTime());
 
 	@Test
-	public void testFind(){
-		Users users = userJpaRepository.findById(1000);
-		assertEquals(1000, users.getUser_account());
+	public void testExistsFind() {
+		List<User> users = userRepository.findAll();
+		assertNotNull(users);
+	}
+
+	@Test
+	public void findById(Long id) {
+		assertEquals(1000L, id);
 	}
 
 	@Test
 	@Transactional
 	public void testSaveAndGetAndDelete() {
-		Users user = new Users();
+		User user = new User();
 //		user.setUser_account();
 		user.setUsername("TestUser");
 		user.setBcrypt_key("$2y$12$bricZ7h89pMIb/pVlORBsO2tMaD6S4n2RPlv4DHCOiUwJ00obU9o6");
@@ -53,15 +63,15 @@ public class UserPersistenceTests {
 		user.setPhone("1-555-555-5555");
 		user.setCreation_date(date);
 		user.setEnabled(true);
-		user = userJpaRepository.create(user);
+		userRepository.saveAndFlush(user);
 
 		entityManager.clear();
 
-		Users plainUser = userJpaRepository.findById(user.getUser_account());
+		User plainUser = (User) userRepository.findAll();
 		assertEquals("TestUser", plainUser.getUsername());
 		assertEquals("Firstname", plainUser.getFirst_name());
 		System.out.println("Create Plain User Succeeded");
-		userJpaRepository.delete(plainUser);
+		userRepository.delete(plainUser);
 		System.out.println("Delete Plain User Succeeded");
 
 	}

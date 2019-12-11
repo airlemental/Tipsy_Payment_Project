@@ -1,23 +1,25 @@
 ---
 server:
-  port: 0
-eureka:
-  client:
-    register-with-eureka: true
-    fetch-registry: true
-    service-url: http://discUser:discPassword@localhost:8082/eureka/
-  instance:
-    instance-id: ${spring.application.name}:${random.int}
-spring:
-  jpa:
-    database-platform: org.hibernate.dialect.MySQLDialect
-    hibernate:
-      ddl-auto: none
-    show-sql: true
-  security:
-    user:
-      name: configUser
-      password: configPassword
-      roles: SYSTEM
-connection:
-  success: PropertiesConnectionSuccessful
+  port: 8090
+#eureka:
+#  client:
+#    register-with-eureka: true
+#    fetch-registry: true
+#    service-url: http://discUser:discPassword@localhost:8082/eureka/
+#  instance:
+#    instance-id: ${spring.application.name}:${random.int}
+#spring:
+#  jpa:
+#    database-platform: org.hibernate.dialect.MySQLDialect
+#    hibernate:
+#      ddl-auto: none
+#    show-sql: true
+#  security:
+#    user:
+#      name: configUser
+#      password: configPassword
+#      roles: SYSTEM
+#  profiles:
+#    active: development
+#connection:
+#  success: PropertiesConnectionSuccessful

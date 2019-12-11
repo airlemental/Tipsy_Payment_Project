@@ -1,34 +1,11 @@
 package net.treXis.tipsy.security.repository;
 
 import net.treXis.tipsy.security.model.FundRequests;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import java.util.Optional;
-
 @Repository
-public class FundRequestsRepository {
+public interface FundRequestsRepository extends JpaRepository<FundRequests, Long> {
 
-//    @PersistenceContext
-//    private EntityManager entityManager;
-
-    @Autowired
-    private FundRequestsJpaRepository fundRequestsJpaRepository;
-
-    public FundRequests create(FundRequests fundRequests){
-        return fundRequestsJpaRepository.saveAndFlush(fundRequests);
-    }
-
-    public FundRequests update(FundRequests fundRequests){
-        return fundRequestsJpaRepository.saveAndFlush(fundRequests);
-    }
-
-    public FundRequests delete(FundRequests fundRequests){
-        return fundRequestsJpaRepository.saveAndFlush(fundRequests);
-    }
-
-    public Optional<FundRequests> find(Integer from_user_account){
-        return fundRequestsJpaRepository.findById(from_user_account);
-    }
-
+                 // Make sure the JpaRepository <> area is the entity, type of primary key, or everything starts to fail
 }
