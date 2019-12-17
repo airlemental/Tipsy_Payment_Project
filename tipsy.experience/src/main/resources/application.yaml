@@ -5,10 +5,16 @@ eureka:
   client:
     register-with-eureka: true
     fetch-registry: true
-    service-url: http://discUser:discPassword@localhost:8082/eureka/
+    serviceUrl:
+     defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+  instance:
+    prefer-ip-address: true
+#spring:
+#  security:
+#    user:
+#      name: configUser
+#      password: configPassword
+#      roles: SYSTEM
 spring:
-  security:
-    user:
-      name: configUser
-      password: configPassword
-      roles: SYSTEM
+  application:
+    name: spring-cloud-eureka-experience

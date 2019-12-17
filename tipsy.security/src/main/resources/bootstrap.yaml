@@ -1,7 +1,7 @@
----
-spring:
-  application:
-    name: TipsySecurityServer
+#---
+#spring:
+#  application:
+#    name: TipsySecurityServer
 #  datasource:
 #    url: jdbc:mysql://localhost:3306/tipsy
 #    username: Wind

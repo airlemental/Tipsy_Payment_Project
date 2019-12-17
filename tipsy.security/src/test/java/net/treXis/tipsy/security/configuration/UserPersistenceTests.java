@@ -28,8 +28,8 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 //@AutoConfigureTestDatabase(replace= AutoConfigureTestDatabase.Replace.NONE) //trying to force @DataJpaTest to use MySQL datasource
 public class UserPersistenceTests {
 
-	@Autowired
-	JpaConfiguration jpaConfiguration;
+//	@Autowired
+//	JpaConfiguration jpaConfiguration;
 
 	@Autowired
 	private UserRepository userRepository;

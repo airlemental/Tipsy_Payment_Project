@@ -11,7 +11,7 @@ import javax.persistence.OneToMany;
 import java.sql.Timestamp;
 import java.util.Set;
 
-@Entity(name = "users")
+@Entity(name = "/api/users")
 //@Table(name = "users")
 @JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
 public class User {

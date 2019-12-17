@@ -5,23 +5,23 @@ eureka:
   client:
     register-with-eureka: false
     fetch-registry: false
-    serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
-#  instance:
-#    environment:
-#    data-center-info:
-spring:
-  application:
-    name: TipsyDiscoveryServer
-  freemarker:
-    template-loader-path: classpath:/templates/
-    prefer-file-system-access: false
-  cloud:
-    loadbalancer:
-      ribbon:
-        enabled: false
-  security:
-    user:
-      name: configUser
-      password: configPassword
-      roles: SYSTEM
+#    serviceUrl:
+#      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+##  instance:
+##    environment:
+##    data-center-info:
+#spring:
+#  application:
+#    name: TipsyDiscoveryServer
+#  freemarker:
+#    template-loader-path: classpath:/templates/
+#    prefer-file-system-access: false
+#  cloud:
+#    loadbalancer:
+#      ribbon:
+#        enabled: false
+#  security:
+#    user:
+#      name: configUser
+#      password: configPassword
+#      roles: SYSTEM

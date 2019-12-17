@@ -1,25 +1,25 @@
-package net.treXis.tipsy.security.configuration;
-
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
-import org.springframework.jdbc.datasource.DriverManagerDataSource;
-
-import javax.sql.DataSource;
-
-@Configuration
-public class MySqlConfiguration {
-
-    @Bean(name = "development")
-    @Primary
-    public DataSource dataSource(){
-        DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://localhost:3306/table_name");
-        dataSource.setUsername( "Wind" );
-        dataSource.setPassword( "B031ng777" );
-        return dataSource;
-    }
+//package net.treXis.tipsy.security.configuration;
+//
+//import org.springframework.context.annotation.Bean;
+//import org.springframework.context.annotation.Configuration;
+//import org.springframework.context.annotation.Primary;
+//import org.springframework.jdbc.datasource.DriverManagerDataSource;
+//
+//import javax.sql.DataSource;
+//
+//@Configuration
+//public class MySqlConfiguration {
+//
+//    @Bean(name = "development")
+//    @Primary
+//    public DataSource dataSource(){
+//        DriverManagerDataSource dataSource = new DriverManagerDataSource();
+//        dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
+//        dataSource.setUrl("jdbc:mysql://localhost:3306/tipsy");
+//        dataSource.setUsername( "Wind" );
+//        dataSource.setPassword( "B031ng777" );
+//        return dataSource;
+//    }
 
 
 
@@ -34,7 +34,7 @@ public class MySqlConfiguration {
 //        System.out.println("Custom MySQL Tipsy datasource has been set.");
 //        return builder.build();
 //    }
-}
+//}
 
 
 

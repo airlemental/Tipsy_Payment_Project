@@ -7,6 +7,7 @@
         <option value="$PROJECT_DIR$/tipsy.experience/pom.xml" />
         <option value="$PROJECT_DIR$/tipsy.gateway/pom.xml" />
         <option value="$PROJECT_DIR$/tipsy.security/pom.xml" />
+        <option value="$PROJECT_DIR$/tipsy.viewer/pom.xml" />
       </list>
     </option>
   </component>

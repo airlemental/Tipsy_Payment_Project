@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/tipsy.experience/tipsy.experience.iml" filepath="$PROJECT_DIR$/tipsy.experience/tipsy.experience.iml" />
       <module fileurl="file://$PROJECT_DIR$/tipsy.gateway/tipsy.gateway.iml" filepath="$PROJECT_DIR$/tipsy.gateway/tipsy.gateway.iml" />
       <module fileurl="file://$PROJECT_DIR$/tipsy.security/tipsy.security.iml" filepath="$PROJECT_DIR$/tipsy.security/tipsy.security.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tipsy.viewer/tipsy.viewer.iml" filepath="$PROJECT_DIR$/tipsy.viewer/tipsy.viewer.iml" />
     </modules>
   </component>
 </project>
