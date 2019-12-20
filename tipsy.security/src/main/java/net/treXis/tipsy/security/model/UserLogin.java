@@ -7,7 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Entity(name = "/api/user_login")
+@Entity(name = "user_login")
 @JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
 public class UserLogin {
 

@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/users")
+@RequestMapping("/api/users")
 public class UsersController {
 
     private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(UsersController.class);

@@ -7,8 +7,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.math.BigDecimal;
-import java.util.Date;
 import java.sql.Timestamp;
+import java.util.Date;
 
 @Entity(name = "fund_requests")
 @JsonIgnoreProperties(value = {"hibernateLazyInitializer", "handler"})
@@ -18,12 +18,9 @@ public class FundRequests {
     @GeneratedValue(strategy = GenerationType.IDENTITY)   //GenerationType.IDENTITY)    GenerationType.AUTO)
     private Long id;
 
-    //possible Json formatting for date if necessary
-//    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "MM-dd-yyyy")
-
     private Integer user_acct;
     private String request_code;
-//    @CreationTimestamp
+//    @CreationTimestamp  //need to do more research on this usage
     private Timestamp request_date;
     private BigDecimal amount;
     private String paypal_account;
@@ -32,9 +29,17 @@ public class FundRequests {
     private String paypal_status;
     private String description;
     private boolean complete_flag;
-//    @UpdateTimestamp
+//    @UpdateTimestamp    //need to do more research on this usage
     private Timestamp complete_date;
     private boolean enabled;
+
+    //possible Date workaround would be to change the Timestamp to a basic date and do a JSON format, but might be able to format the timestamp?
+    //still need to figure out what would generate it.
+    //possible Json formatting for date if necessary
+//    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "MM-dd-yyyy")
+//    private Date request_date;
+//    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "MM-dd-yyyy")
+//    private Date complete_date;
 
 //    @ManyToOne(fetch = FetchType.LAZY)
 ////    @JoinTable(name = "Users", joinColumns = @JoinColumn(name = "fund_request_queue.from_user_acct"), inverseJoinColumns = @JoinColumn(name = "user_account"))

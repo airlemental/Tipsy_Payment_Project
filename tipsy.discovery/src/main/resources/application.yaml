@@ -1,4 +1,7 @@
 ---
+spring:
+  application:
+    name: tipsy-discovery
 server:
   port:  8761
 eureka:

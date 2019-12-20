@@ -1,17 +1,17 @@
 package net.treXis.tipsy.viewer;
 
-import net.treXis.tipsy.viewer.controller.GreetingClient;
+import net.treXis.tipsy.viewer.repositories.GreetingClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-@SpringBootApplication(scanBasePackages = {"net.treXis.tipsy.viewer.controller", "net.treXis.tipsy.viewer", "net.treXis.tipsy.viewer.model", "net.treXis.tipsy.viewer.configuration"})
+// "net.treXis.tipsy.viewer.controller", , "net.treXis.tipsy.viewer.model", "net.treXis.tipsy.viewer.configuration"
+@SpringBootApplication(scanBasePackages = {"net.treXis.tipsy.viewer"})
 @EnableFeignClients
-@EnableEurekaClient
+@Controller //acting to server the greeting page
 public class ViewerApplication {
 
 	@Autowired
@@ -29,7 +29,7 @@ public class ViewerApplication {
 
 	@RequestMapping("/api/get-greeting")
 	public String greeting(Model model) {
-		model.addAttribute("greeting", greetingClient.greeting());
+		model.addAttribute("feign-greeting", greetingClient.greeting());
 		return "greeting-view";
 	}
 

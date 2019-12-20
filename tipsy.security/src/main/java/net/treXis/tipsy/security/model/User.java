@@ -2,17 +2,13 @@ package net.treXis.tipsy.security.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import java.sql.Timestamp;
-import java.util.Set;
 
-@Entity(name = "/api/users")
-//@Table(name = "users")
+@Entity(name = "users")
 @JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
 public class User {
 
@@ -31,8 +27,8 @@ public class User {
 
     //    @JoinColumn(name = "from_user_account")
     //    @JoinTable(name = "fund_request_queue")
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Set<FundRequests> fundRequests;
+//    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+//    private Set<FundRequests> fundRequests;
 
     public User(){
     }
@@ -43,12 +39,12 @@ public class User {
 //    }
 
     // For Fund Requests
-    public Set<FundRequests> getFundRequests(){
-        return fundRequests;
-    }
-    public void setFundRequests(Set<FundRequests> fundRequests) {
-        this.fundRequests = fundRequests;
-    }
+//    public Set<FundRequests> getFundRequests(){
+//        return fundRequests;
+//    }
+//    public void setFundRequests(Set<FundRequests> fundRequests) {
+//        this.fundRequests = fundRequests;
+//    }
 
 // For Users
     public Long getUser_account() {

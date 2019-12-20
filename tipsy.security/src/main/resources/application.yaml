@@ -1,3 +1,23 @@
+---
+spring:
+  application:
+    name: tipsy-security
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+server:
+  port: 8081
+  error:
+    whitelabel:
+      enabled: false
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+    register-with-eureka: true
+    fetch-registry: true
 #---
 #server:
 #  port: 8090

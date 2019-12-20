@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
-@SpringBootApplication(scanBasePackages = {"net.treXis.tipsy"})
+@SpringBootApplication(scanBasePackages = {"net.treXis.tipsy.security"})
 @EnableEurekaClient
 public class SecurityApplication extends SpringBootServletInitializer {
 
