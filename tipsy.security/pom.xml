@@ -54,12 +54,12 @@
 			<artifactId>spring-security-oauth2-autoconfigure</artifactId>
 			<version>2.2.1.RELEASE</version>
 		</dependency>
-<!--		&lt;!&ndash; https://mvnrepository.com/artifact/org.springframework.security/spring-security-jwt &ndash;&gt;-->
-<!--		<dependency>-->
-<!--			<groupId>org.springframework.security</groupId>-->
-<!--			<artifactId>spring-security-jwt</artifactId>-->
-<!--			<version>1.1.0.RELEASE</version>-->
-<!--		</dependency>-->
+		<!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-jwt -->
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-jwt</artifactId>
+			<version>1.1.0.RELEASE</version>
+		</dependency>
 <!-- End  OAth2  Section  -->
 <!--		<dependency>-->
 <!--			<groupId>org.springframework.boot</groupId>-->

@@ -12,9 +12,9 @@ public class ResourceServerConfigRemoteTokenService {
     @Bean
     public RemoteTokenServices tokenService() {
         RemoteTokenServices tokenService = new RemoteTokenServices();
-        tokenService.setCheckTokenEndpointUrl("http://localhost:8080/spring-security-oauth-server/oauth/check_token");
-        tokenService.setClientId("fooClientIdPassword");
-        tokenService.setClientSecret("secret");
+        tokenService.setCheckTokenEndpointUrl("http://localhost:8080/tipsy-security/oauth/check_token");
+        tokenService.setClientId("Wind");
+        tokenService.setClientSecret("B031ng777");
         return tokenService;
     }
 

@@ -21,7 +21,7 @@ export class AppService {
     // tslint:disable-next-line:variable-name
     private _router: Router, private _http: HttpClient, private oauthService: OAuthService) {
     this.oauthService.configure({
-      loginUrl: 'http://localhost:8081/tipsy.security/oauth/authorize',
+      loginUrl: 'http://localhost:8081/tipsy-security/oauth/authorize',
       redirectUri: 'http://localhost:8086/',
       clientId: 'sampleClientId',
       scope: 'read write foo bar',

@@ -1,14 +1,14 @@
 ---
 spring:
   application:
-    name: tipsy-security
+    name: tipsy-gateway
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
       ddl-auto: none
     show-sql: true
 server:
-  port: 7070
+  port: 0
   error:
     whitelabel:
       enabled: false

@@ -2,13 +2,14 @@ package net.treXis.tipsy.viewer.controller;
 
 import net.treXis.tipsy.viewer.model.OneFundRequest;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+@RestController
+@RequestMapping("/api/fundrequests/{id}")
 public class OneFundRequestController {
 
     @PreAuthorize("#oauth2.hasScope('read')")

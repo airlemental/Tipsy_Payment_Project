@@ -21,9 +21,13 @@ import {FormsModule} from "@angular/forms";
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
     RouterModule.forRoot([
-      {path: '', component: HomeComponent, pathMatch: 'full'}], {onSameUrlNavigation: 'reload'}),
-    FormsModule
+      {path: '', pathMatch: 'full', redirectTo: 'home'},
+      {path: 'home', component: HomeComponent, pathMatch: 'full'},
+      {path: 'login', component: LoginComponent},
+      {path: 'foo', component: FooComponent}
+        ], {onSameUrlNavigation: 'reload'}),
   ],
   providers: [Cookie],
   bootstrap: [AppComponent]

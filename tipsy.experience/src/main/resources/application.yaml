@@ -1,20 +1,20 @@
 ---
-server:
-  port: 0
-eureka:
-  client:
-    register-with-eureka: true
-    fetch-registry: true
-    serviceUrl:
-     defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
-  instance:
-    prefer-ip-address: true
-#spring:
-#  security:
-#    user:
-#      name: configUser
-#      password: configPassword
-#      roles: SYSTEM
 spring:
   application:
-    name: spring-cloud-eureka-experience
+    name: tipsy-experience
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+server:
+  port: 0
+  error:
+    whitelabel:
+      enabled: false
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+    register-with-eureka: true
+    fetch-registry: true

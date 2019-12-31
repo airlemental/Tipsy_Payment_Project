@@ -23,16 +23,16 @@ export class AppService {
 
   obtainAccessToken(loginData){
     let params = new URLSearchParams();
-    params.append('username',loginData.username);
-    params.append('password',loginData.password);
+    params.append('username', loginData.username);
+    params.append('password', loginData.password);
     params.append('grant_type','password');
-    params.append('client_id','fooClientIdPassword');
+    params.append('client_id','Wind');
 
     const headers = new HttpHeaders({'Content-type': 'application/x-www-form-urlencoded; charset=utf-8',
-      'Authorization': 'Basic '+ btoa("fooClientIdPassword:secret")});
+      'Authorization': 'Basic '+ btoa("Wind:secret")});
     // let options = new RequestOptions({ headers: headers });
     console.log(params.toString());
-    this._http.post('http://localhost:8081/spring-security-oauth-server/oauth/token', params.toString(), { headers })
+    this._http.post('http://localhost:8081/tipsy-security/oauth/token', params.toString(), { headers })
       // .map(res => res.json())
       .subscribe(
         data => this.saveToken(data),
